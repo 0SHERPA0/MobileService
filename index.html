@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MobileService</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="form.css">
+    <script src="form.js"></script>
+    <link rel="stylesheet" href="icon.css">
+    <link rel="stylesheet" href="devsearch.css">
+    <script src="devsearch.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <style>
+     ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+} 
+.notification {
+            visibility: hidden;
+            margin-top: auto;
+            min-width: 300px;
+            margin-left: -150px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+        .notification.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;} 
+            to {bottom: 30px; opacity: 1;}
+        }
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;} 
+            to {bottom: 0; opacity: 0;}
+        }
+
+    </style>
+    
+</head>
+<body>
+    <!--header-->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">D.B.Mobile & Repair Center</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav me-auto">
+            
+          </ul>
+          <div class="d-flex nav">
+            <ul class="navbar-nav me-auto">
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#service"><img src="image/repair.png" style="width: 30px;height:30px;"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact"><img src="image/contact.png" style="width: 30px;height:30px;"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSearchPopup(event)"><img src="image/search(1).png" style="width: 30px;height:30px;">
+              </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showformPopup(event)"><img src="image/user.png" style="width: 30px;height:30px;"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+      <!--body-->
+     <!-- Notification Div -->
+    <div id="notification" class="notification">
+        
+    </div>
+      <div id="overlay">
+      <div id="form-popup" class="form_container">
+      <input type="checkbox" id="check">
+        <div class="login form">
+          <i class="material-icons" onclick="hideformPopup()" id="closebtn" style="cursor: pointer;">close</i><br>
+          <header><img src="image/user_circle.png" style="width: 100px;"></header>
+          
+          <form action="login.php" method="post">
+            <input type="text" name="email" placeholder="Enter your email" required>
+            <input type="password" name="psw" placeholder="Enter your password" required>
+           
+            <input type="submit" class="button" value="Login">
+          </form>
+          <div class="signup">
+          <span class="signup">Don't have an account?
+          <label for="check">Signup</label>
+          </span>
+          </div>
+        </div>
+        <div class="registration form">
+          <i class="material-icons" onclick="hideformPopup()" id="closebtn" style="cursor: pointer;">close</i><br>
+          <header><img src="image/add-user.png" style="width: 60px;"></header>
+          <form action="signup.php" id="registrationForm" method="post">
+            <input type="text" name="name" placeholder="Full name" required>
+            <input type="text" name="adrs" placeholder="address" required>
+            <input type="text" name="contact" placeholder="Contact number" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="psw" placeholder="Password" required>
+            <input type="submit" class="button" onclick="submitForm()" value="Signup">
+          </form>
+          <div class="signup">
+          <span class="signup">Already have an account?
+           <label for="check">Login</label>
+          </span>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div id="blurr"></div>
+<div id="search_popup">
+    <h4>Search Device:</h4>
+    <i class="material-icons" onclick="hideSearchPopup()" id="closebtn" style="cursor: pointer;">close</i><br>
+    <form method="POST">
+        <input type="text" id="deviceid" name="deviceid">
+        <button type="submit" name="search" value="search"><i class="material-icons">search</i></button>
+    </form>
+</div>
+<div id="devblurr"></div>
+<div id="device_popup" style="display: none;">
+              
+</div>
+    
+    <div class="main_cont">
+      <div class="container">
+        <div class="desc reveal">
+            <h1>Your trust mobile phone Comapanion</h1>
+            <p>discover top-notch mobile repair services sand quality smathphone accessories at mobile Service. Your satisfaction is out priority!</p>
+            <div class="rate reveal">
+                <div class="box">
+                    <h1>10K+</h1>
+                    <p>happy clients</p>
+                </div>
+                <div class="box">
+                    <h1>8K+</h1>
+                    <p>repairs</p>
+                </div>
+                <div class="box">
+                    <h1>3.9</h1>
+                    <p>ratings</p>
+                </div>
+            </div>
+        </div>
+        <div class="mainimg reveal">
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+              <!-- Indicators/dots -->
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+              </div>
+        
+              <!-- The slideshow/carousel -->
+              <div class="carousel-inner">
+                
+                <div class="carousel-item active">
+                  <img src="image/mobile.jpg" class="d-block" style="width:100%">
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="image/mobcl.jpg" class="d-block" style="width:100%">
+                  <div class="carousel-caption">
+                  </div> 
+                </div>
+                <div class="carousel-item">
+                  <img src="image/mobserv.png" class="d-block" style="width:100%">
+                  <div class="carousel-caption">
+                  </div> 
+                </div>
+                <div class="carousel-item">
+                  <img src="image/hardware.webp" class="d-block" style="width:100%">
+                  <div class="carousel-caption">
+                  </div>  
+                </div>
+              </div>
+        
+                <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="brand reveal">
+        <div class="box1"><h1><img src="image/samsung.png" ></h1></div>
+        <div class="box1"><h1><img src="image/apple.png" ></h1></div>
+        <div class="box1"><h1><img src="image/huawei.png"></h1></div>
+        <div class="box1"><h1><img src="image/vivo.png"></h1></div>
+        <div class="box1"><h1><img src="image/oppo.png"></h1></div>
+        <div class="box1"><h1><img src="image/sony.png"></h1></div>
+        <div class="box1"><h1><img src="image/nokia.png"></h1></div>
+    </div>
+    <div class="container1">
+        <div class="desc1 reveal"><p>Discover the Ultimate Mobile Solutions</p></div>
+        <div class="desc2 reveal"><h1>Leading the Market with Unmatched Repair Quality and Accessories</h1></div>
+        <div class="container1img reveal">
+            <img src="image/repair1.jpg" class="reveal">
+            <img src="image/repair.jpg" class="reveal">
+        </div>
+    </div>
+    <div class="serv_container" id="service">
+        <div class="desc3 reveal">
+        <h1>Why Choose D.B.Mobile & repair center?</h1>
+        <p>D.B.Mobile & repair center offers unparalleled repair and accessory solutions. Our certified technicians ensure your devices get the best care while offering a comprehensive range of accessories.</p>
+        </div>
+        <div class="servbox reveal">
+            <i class="material-icons">rocket_launch</i>
+            <h2>Expert Repairs</h2>
+            <p>Our certified technicians provide top-quality repairs for all mobile devices.</p>
+        </div>
+        <div class="servbox reveal">
+            <i class="material-icons reveal">high_quality</i>
+            <h2>Quality Accessories</h2>
+            <p>Discover a wide range of high-quality accessories for your phone. </p>
+        </div>
+        <div class="servbox reveal reveal" >
+            <i class="material-icons">currency_rupee</i>
+            <h2>Affordable Prices</h2>
+            <p>Competitive pricing for top-tier service and products.</p>
+        </div>
+        <div class="servbox reveal reveal">
+            <i class="material-icons">bolt</i>
+            <h2>Fast Service</h2>
+            <p>Quick turnaround times to get you connected faster. </p>
+        </div>
+    </div>
+    <div class="review">
+        <div class="desc4 reveal">
+            <h1>What Our Customers Say</h1>
+        </div>
+        <div class="desc5 reveal"><p>Explore genuine testimonials from our satisfied customers and see the D.B Mobile & repair center difference.</p> </div>
+        <div class="c_review reveal">
+            <div class="cimg reveal">
+            <img src="image/c_review.jpg" class="reveal">
+            </div>
+            <div class="c_text reveal"><h1>D.B.Mobile & repair center saved my phone! Quick, efficient, and affordable service. Highly recommend!</h1></div>
+            <div class="c_name reveal">Jane Doe</div>
+
+        </div>
+    </div>
+    <div class="contact reveal" id="contact">
+        <div class="contactinfo reveal">
+            <h1>Get in Touch</h1>
+            <h3>contact us for your mobile needs!</h3>
+            <i class="material-icons reveal">mail</i><p class="reveal">mobileserv@gmail.com</p>
+            <i class="material-icons reveal">call</i><p class="reveal">9803454616</p>
+            <i class="material-icons reveal">location_on</i><p class="reveal">Tarkeshower 2, KTM</p>
+        </div>
+        <div class="form-cont reveal">
+            <form class="reveal" method="post" action="">
+            <input type="text" name="name" placeholder="Name"><br>
+            <input type="email" name="email" placeholder="@example.com"><br>
+            <textarea name="message" placeholder="Message..."></textarea><br>
+            <input type="submit" name="submit_c" value="Send" style="background-color: blue;color: white;">
+        </form>
+        </div>
+    </div>
+    <div id="success_popup">
+    <h2>Success!</h2>
+    <p>Your message has been sent.</p>
+    <button id="closebtn" onclick="hideSuccessPopup()" class="material-icons">close</button>
+</div>
+   
+    <div class="offer">
+        <div class="offer-cont reveal">
+            <div class="offerdesc reveal">
+            <h1>Stay Connected with Mobile Service</h1>
+            <p>Don't miss out on our latest offers and news. Stay in touch!</p>  
+            <img src="image/signup.png" style="width: 80px;height: 80px;cursor:pointer" onclick="showformPopup(event)">
+            </div>
+        </div>
+        <div class="offerimg reveal">
+            <img src="image/offer.webp" class="reveal">
+        </div>
+    </div>
+    <div class="footer reveal">
+      <hr>
+      <div class="company reveal"><h1>D.B.Mobile & Repair Center</h1></div>
+      <div class="cbox reveal">
+        <div class="cmbox reveal">
+          <h3></h3>
+          <p>Legal</p>
+          <p>Terms & Condition</p>
+          <p>Privacy policy</p>
+          <p>Cookies Policy</p>
+        </div>
+        <div class="cmbox reveal">
+          <h5>Reach us</h5>
+          <p>Sherpaphurtenji2@gmail.com</p>
+          <p>9803454616</h3><br>
+          <p><img src="image/facebook (1).png" style="width: 30px;height: 30px;">
+            <img src="image/instagram (1).png" style="width: 30px;height: 30px;">
+            <img src="image/twitter (1).png" style="width: 30px;height: 30px; ">
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+       // Intersection Observer to add and remove the active class when an element enters and leaves the viewport
+       const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        });
+
+        // Targeting elements with the .reveal class
+        const revealElements = document.querySelectorAll('.reveal');
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });  
+
+        function hideSuccessPopup() {
+        document.getElementById('success_popup').style.display = 'none';
+    }
+    
+     function hideloginerrPopup(){
+      document.getElementById('loginerr_popup').style.display ='none';
+     }
+  //notification.
+     document.addEventListener("DOMContentLoaded", function() {
+            var notification = document.getElementById("notification");
+            if (notification.innerHTML.trim() !== "") {
+                notification.className = "notification show";
+                setTimeout(function(){ notification.className = notification.className.replace("show", ""); }, 3000);
+            }
+        });    
+</script>
+  
+</body>
+</html>
+<!-- <?php
+ // Close database connection
+ mysqli_close($connection);
+?> -->

@@ -1,0 +1,828 @@
+body{
+    width: 100%;
+    height: 100vh;
+    background:#F7F7F7;
+  }
+  #success_popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+  width: 80%;
+  max-width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  color: black;
+}
+#success_popup h2 {
+  margin-top: 0;
+}
+#success_popup #closebtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background-color: white;
+  border: 0px;
+}
+  .main_cont{
+    position: relative;
+    margin-top:0px;
+    width: 100%;
+    height: 700px;
+    background-color: rgb(6, 45, 21);
+  }
+    .container{
+position:relative;
+  margin-top:5px;
+  float: left;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 95%;
+  max-height: 700px;
+  margin-bottom: 0px;
+  background-color:rgb(6, 45, 21);
+  /*background:rgb(6, 45, 21);*/
+  border-radius: 7px;
+  animation: transitionIn 2s ease-in;
+  /*box-shadow: 0 5px 10px rgba(0,0,0,0.3);*/
+}
+
+    .desc{
+        position: relative;
+        margin-top: 50px;
+        float: left;
+        justify-content: center;
+        text-align: left;
+        width:40%;
+        color: white;
+        
+        
+    }
+    .rate{
+        display: inline-block;
+        margin-top: 90px;
+        text-align: center;
+        text-justify: center;
+
+    }
+    .box{
+        display: inline-block;
+        padding: 30px;
+        text-align: center;
+    }
+    .mainimg{
+        width: 50%;
+        margin: 0 auto;
+        height:500px;
+        justify-content: center;
+        border-radius: 7px;
+        float: right;
+        
+    }
+    .mainimg img{
+      width: 100%;
+      height: 500px;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 7px;
+      
+    }
+    .brand{
+        width: 100%;
+        height: 150px;
+        margin-top: 50px;
+    }
+    .box1{
+        display: inline-block;
+        padding: 5px;
+        text-align: center;
+        width: 170px;
+        height: 100%;
+        margin-left: 2px;
+    }
+    .box1 img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        aspect-ratio: 3/2;
+    }
+    .container1{
+        position: relative;
+        display: inline-block;
+        margin-top:100px;
+        width: 100%;
+        height: 480px;
+    }
+    .desc1{
+        padding: 10px;
+        float: left;
+        width: 30%;
+        text-align: left;
+        height: 100px;
+        margin-left: 90px;
+    }
+    .desc2{
+        float: right;
+        text-align: left;
+        width: 50%;
+        height: 100px;
+        margin-right: 90px;
+    }
+    .container1 img{
+        width:600px;
+      height:400px;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      padding: 50px;
+    }
+    .serv_container{
+        position:relative;
+        margin-top: 300px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 400px;
+  justify-content: center;
+  border-radius: 7px;
+  /*box-shadow: 0 5px 10px rgba(0,0,0,0.3);*/
+    }
+    .desc3{
+        text-align: center;
+        width: 40%;
+        margin-left: 30%;
+        margin-right: 30%;
+        height: 80px;
+    }
+    .servbox{
+      position: relative;
+        display: inline-block;
+        justify-content: center;
+        left:30px;
+        margin-top: 110px;
+        /*animation: transitionIn 2s ease-in;*/
+        width:300px;
+        height: 200px;
+        border-radius: 7px;
+        background-color:rgb(6, 45, 21);
+        color: white;
+        
+    }
+   .review{
+    position: relative;
+    margin-top:-90px;
+    width: 100%;
+    padding: 5px;
+    display: inline-block;
+   }
+   
+   .desc4{
+    display: inline-block;
+    width:30%;
+    height: 80px;
+    margin-left: 90px;
+   }
+   .desc5{
+    float: right;
+    width: 15%;
+    text-align: left;
+    margin-right:40%;
+   }
+   .c_review{
+    position: relative;
+    width: 90%;
+    height: 500px;
+    margin-top: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: rgb(240, 236, 236);
+    border-radius: 15px;
+   }
+   .cimg{
+    margin-top: 35px;
+    width:25%;
+    height:465px;
+    float: left;
+    margin-left: 5%;
+   }
+   .cimg img{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    object-fit:cover;
+   }
+   .c_text{
+    float: right;
+    width: 50%;
+    height: 80px;
+    margin-top: 90px;
+    margin-right: 10%;
+   }
+   .c_name{
+    float: right;
+    width: 50%;
+    margin-top: 150px;
+    text-align: left;
+    margin-right: 10%;
+   }
+   .contact{
+    width: 100%;
+    margin-top: 50px;
+    display: inline-block;
+    height: 600px;
+    overflow: hidden;
+   }
+   .contactinfo{
+    width: 50%;
+    float: left;
+    margin-top: 100px;
+    margin-left: 90px;
+   }
+   .form-cont{
+    width: 460px;
+    height: 400px;
+    padding: 15px;
+    float: right;
+    margin: 130px auto;
+    justify-content: center;
+   }
+   
+   input{
+    padding: 5px;
+    margin:5px;
+    width: 400px;
+    float: left;
+    justify-content: center;
+    border-radius: 7px;
+    border: 1px solid lightgrey;
+   }
+   textarea{
+    width: 400px;
+    height: 150px;
+    margin: 5px;
+    float: left;
+    padding: 5px;
+    border-radius: 7px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    justify-content: center;
+    border: 1px solid lightgrey;
+   }
+   .offer{
+    width: 100%;
+    margin-top: 20px;
+   }
+   .offer-cont{
+    width: 90%;
+    background-color:rgb(6, 45, 21);
+    border: 1px solid;
+    height:400px;
+    margin-left: 60px;
+    border-radius: 15px;
+   }
+   .offerdesc{
+    float: left;
+    width: 40%;
+    margin-left: 50px;
+    margin-top: 50px;
+    color: white;
+   }
+   .offerdesc img{
+    float:right;
+    margin-right: 50px;
+   }
+   .offerimg{
+    width: 30%;
+    float: right;
+    height: 450px;
+    margin-top: -450px;
+    margin-right: 180px;
+    margin-bottom: 50px;
+   }
+   .offerimg img{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+   }
+   .footer{
+    width: 100%;
+    margin-top: 50px;
+    height: 240px;
+    background-color: rgb(6, 45, 21);
+
+   }
+   .company{
+    float: left;
+    width: 40%;
+    margin-left: 30px;
+    color: white;
+    
+   }
+   .cbox{
+    width: 35%;
+    float: right;
+    padding: 5px;
+   }
+   .cmbox{
+    float: left;
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    left:90px;
+    color: white;
+   }
+   table{
+    padding: 10px;
+    width: 90%;
+    margin-left:10%;
+
+   }
+
+
+@media only screen and (max-width:680px) {
+/* For tablets: */
+.main_cont{
+    width: 100%;
+    height: 790px;
+    }
+    .container{
+    position: relative;
+    width: 100%;
+    height:100%;
+    
+    }
+    .desc{
+    width: 100%;
+    margin-top: 20px;
+    max-width: 680px;
+    text-align: center;
+    }
+    .mainimg{
+            width: 100%;
+            margin: 0 auto;
+            height: 50%;;
+            justify-content: center;
+            border-radius: 7px;
+            
+        }
+        .mainimg img{
+          width:100%;
+          height:100%;
+          aspect-ratio: 16/9;
+          object-fit: cover;
+          border-radius: 7px;
+          
+        }
+        .brand{
+            position: relative;
+            max-width: 680px;
+            height: 205px;
+        }
+        .box1{
+            width: 120px;
+            height: 100px;
+            
+        }
+        .box1 img{
+            width: 100%;
+            object-fit: contain;
+    
+        }
+        .container1{
+            margin-top:30px;
+            max-width: 680px;
+            height: 950px;
+            text-align: center;
+            display: inline-block;
+        }
+       .desc1{
+        width: 100%;
+        height: 70px;
+        margin: 0 auto;
+        text-align: center;
+        
+       }
+       .desc2{
+        width: 100%;
+        margin:auto;
+        text-align: center;
+       }
+       
+       .container1 img{
+        margin:auto;
+        width: 100%;
+        object-fit:cover;
+       }
+    .serv_container{
+    margin-top:300px;
+    position: relative;
+    max-height: 680px;
+    margin-bottom: 0;
+    }
+    .servbox{
+    width: 80%;
+    top: 90px;
+    left: 10%;
+    margin:5px auto;
+    text-align: center;
+    }
+    .desc3{
+        width: 95%;
+        margin:auto;
+        text-align: center;
+    }
+    .review{
+        width: 620px;
+        height: 500px;
+        left: 5px;
+        margin-top:450px;
+       }
+       
+       .desc4{
+        width: 50%;
+        margin:auto;
+        margin-left:25%;
+        text-align: center;
+       }
+       .desc5{
+        width: 60%;
+        height: 80px;
+        float: left;
+        margin-top: 5px;
+        margin-left: 130px;
+        text-align: center;
+       }
+       .c_review{
+        width:100%;
+        height: 350px;
+        margin: 90px auto;
+       }
+       .cimg{
+        width: 40%;
+        height: 300px;
+       }
+       .c_text{
+        float: right;
+        width: 50%;
+        margin-right: 0px;
+        margin-top: 20px;
+       }
+       .c_name{
+        float: right;
+        width: 50%;
+        margin-top: 200px;
+        text-align: left;
+        margin-right: 0%;
+       }
+       .contact{
+        width: 100%;
+        margin-top: 90px;
+        display: inline-block;
+        height: 700px;
+       }
+       .contactinfo{
+        width: 100%;
+        margin:auto;
+        text-align: center;
+       }
+       .form-cont{
+        width: 400px;
+        height: 300px;
+        padding: 15px;
+        justify-content: center;
+        float: left;
+
+        margin-left: 80px;
+       }
+       input{
+        padding: 5px;
+        margin:5px;
+        width: 450px;
+        float: left;
+        justify-content: center;
+        border-radius: 7px;
+        border: 1px solid lightgrey;
+       }
+       textarea{
+        width: 450px;
+        height: 90px;
+        float: left;
+        padding: 12px 20px;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        font-size: 16px;
+       }
+       .offer{
+        display: inline-block;
+        max-width: 680px;
+        margin-top: 20px;
+       }
+       .offer-cont{
+        max-width: 680px;
+        width: 90%;
+        margin: auto;
+        height: 600px;
+       }
+       .offerdesc{
+        width: 50%;
+        margin-left: 130px;
+        text-align: center;
+    
+       }
+      
+       .offerimg{
+        width: 70%;
+        height: 40%;
+        float: left;
+        margin-top:-250px;
+        margin-left: 95px;
+       }
+       .footer{
+        width: 100%;
+        height: 500px;
+        margin-top: 50px;
+        background-color: rgb(6, 45, 21);
+    
+       }
+       .company{
+        width: 90%;
+        color: white;
+        justify-content: center;
+        text-align: center;
+        
+       }
+       .cbox{
+        width:50%;
+        float: left;
+        margin-left: 35%;
+        padding: 5px;
+       }
+       .cmbox{
+        margin-top: 10px;
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        color: white;
+        text-align: center;
+       }
+
+}
+@media only screen and (max-width:480px) {
+/* For mobile phones: */
+.main_cont{
+width: 100%;
+height: 850px;
+}
+.container{
+position: relative;
+margin-top: -70px;
+width: 100%;
+height:100%;
+
+}
+.desc{
+width: 100%;
+max-width: 480px;
+text-align: center;
+}
+.mainimg{
+        width: 100%;
+        margin: 0 auto;
+        height: 50%;;
+        justify-content: center;
+        border-radius: 7px;
+        
+    }
+    .mainimg img{
+      width:100%;
+      height:100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 7px;
+      
+    }
+    .brand{
+        position: relative;
+        max-width: 480px;
+        height: 205px;
+    }
+    .box1{
+        width: 90px;
+        height: 100px;
+        
+    }
+    .box1 img{
+        width: 100%;
+        object-fit: contain;
+
+    }
+    .container1{
+        margin-top:30px;
+        max-width: 480px;
+        height: 950px;
+        text-align: center;
+        display: inline-block;
+    }
+   .desc1{
+    width: 100%;
+    height: 70px;
+    margin: 0 auto;
+    text-align: center;
+    
+   }
+   .desc2{
+    width: 100%;
+    margin:auto;
+    text-align: center;
+   }
+   
+   .container1 img{
+    margin:auto;
+    width: 100%;
+    object-fit:cover;
+   }
+.serv_container{
+margin-top:300px;
+position: relative;
+max-height: 480px;
+margin-bottom: 0;
+}
+.servbox{
+width: 80%;
+top: 90px;
+left: 50px;
+margin:5px auto;
+text-align: center;
+}
+.desc3{
+    width: 95%;
+    margin:auto;
+    text-align: center;
+}
+.review{
+    width: 480px;
+    height: 500px;
+    margin-top:450px;
+   }
+   
+   .desc4{
+    width: 50%;
+    margin:auto;
+    margin-left:25%;
+    text-align: center;
+   }
+   .desc5{
+    width: 60%;
+    height: 80px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 90px;
+    text-align: center;
+   }
+   .c_review{
+    width:100%;
+    height: 350px;
+    margin: 90px auto;
+   }
+   .cimg{
+    width: 40%;
+    height: 300px;
+   }
+   .c_text{
+    float: right;
+    width: 50%;
+    margin-right: 0px;
+    margin-top: 20px;
+   }
+   .c_name{
+    float: right;
+    width: 50%;
+    margin-top: 200px;
+    text-align: left;
+    margin-right: 0%;
+   }
+   .contact{
+    width: 100%;
+    margin-top: 90px;
+    display: inline-block;
+    height: 700px;
+   }
+   .contactinfo{
+    width: 100%;
+    margin:auto;
+    text-align: center;
+   }
+   .form-cont{
+    width: 400px;
+    height: 300px;
+    padding: 15px;
+    justify-content: center;
+    float: left;
+    margin-left: 30px;
+   }
+   input{
+    padding: 5px;
+    margin:5px;
+    width: 350px;
+    float: left;
+    justify-content: center;
+    border-radius: 7px;
+    border: 1px solid lightgrey;
+   }
+   textarea{
+    width: 350px;
+    height: 90px;
+    float: left;
+    padding: 12px 20px;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+   }
+   .offer{
+    display: inline-block;
+    max-width: 480px;
+    margin-top: 20px;
+   }
+   .offer-cont{
+    max-width: 480px;
+    width: 90%;
+    margin: auto;
+    height: 600px;
+   }
+   .offerdesc{
+    width: 50%;
+    margin-left: 90px;
+    text-align: center;
+
+   }
+  
+   .offerimg{
+    width: 70%;
+    height: 40%;
+    float: left;
+    margin-top:-250px;
+    margin-left: 70px;
+   }
+   .footer{
+    width: 100%;
+    height: 500px;
+    margin-top: 50px;
+    background-color: rgb(6, 45, 21);
+
+   }
+   .company{
+    width: 90%;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    
+   }
+   .cbox{
+    width:50%;
+    float: left;
+    margin-left: 25%;
+    padding: 5px;
+   }
+   .cmbox{
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+   }
+
+  
+
+
+}
+/* Define a keyframe animation for reveal */
+@keyframes reveal {
+from {
+    opacity: 0;
+    transform: translateY(150px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+/* Apply the reveal animation to elements with the .reveal class */
+.reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
